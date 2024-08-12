@@ -33,6 +33,15 @@ const web3Modal = createWeb3Modal({
   enableOnramp: true, // Optional - false as default
 });
 
+// Web3ModalProvider component
+export function Web3ModalProvider({ children }) {
+  return (
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </WagmiProvider>
+  );
+}
+
 // ConnectButton component
 export function ConnectButton() {
   const [account, setAccount] = useState("");

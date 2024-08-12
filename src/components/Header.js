@@ -24,7 +24,7 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
-import { ConnectButton } from "./Web3Modal/Web3ModalProvider";
+import { Web3ModalProvider, ConnectButton } from "./Web3Modal/Web3ModalProvider";
 
 const products = [
   {
@@ -163,7 +163,9 @@ const Header = () => {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <ConnectButton />
+          <Web3ModalProvider>
+            <ConnectButton/>
+          </Web3ModalProvider>
         </div>
       </nav>
       <Dialog
